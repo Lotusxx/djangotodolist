@@ -1,0 +1,11 @@
+<!-- task_form.html -->
+  <form method="post" action="{% url 'task_create' %}">
+    {% csrf_token %}
+    <tr>
+      <td>{{ form.title }}</td>
+      <td>{{ form.due_date }}</td>
+      <td>
+        <button type="submit" class="btn btn-primary">タスク追加</button>
+      </td>
+    </tr>
+  </form>
