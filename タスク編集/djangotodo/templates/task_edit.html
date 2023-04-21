@@ -1,0 +1,26 @@
+{% extends 'base.html' %}
+
+{% block title %}Edit Task{% endblock %}
+
+{% block content %}
+  <h1>タスク編集</h1>
+  <form method="post">
+    {% csrf_token %}
+    <table class="table">
+      <thead>
+        <tr>
+          <th>タスク</th>
+          <th>期日</th>
+          <th>Action</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>{{ form.title }}</td>
+          <td>{{ form.due_date }}</td>
+          <td><button type="submit" class="btn btn-primary">編集完了</button></td>
+        </tr>
+      </tbody>
+    </table>
+  </form>
+{% endblock %}
